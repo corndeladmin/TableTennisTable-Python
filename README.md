@@ -1,4 +1,4 @@
-# Exercise Name
+# TableTennisTable
 
 1. Fork this repo
     * Go to this repo's TODO: ACADEMY22-557-Update todo links for final repo urls
