@@ -1,9 +1,9 @@
-from src.app import startGame
+from src.app import StartGame
 from src.league import create_league
 
 def main():
   league = create_league()
-  game = startGame(league)
+  game = StartGame(league)
   print("""Welcome to the table tennis table
     =================================
   Commands:
@@ -35,15 +35,14 @@ def main():
 
   - quit
   """)
-  isGameActive = True
+  is_game_active = True
 
-  while (isGameActive):
+  while (is_game_active):
     command = input()
 
     if (command == 'quit'):
-      isGameActive = False
+      is_game_active = False
     else:
       response = game.send_command(command)
       if (response):
         print(response)
-  pass

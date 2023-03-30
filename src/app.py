@@ -1,12 +1,12 @@
 from src.file_service import save, load
-from src.league import buildLeague
+from src.league import BuildLeague
 import src.league_renderer
 import re
 from src.invalid_argument_exception import InvalidArgumentException
 
-class startGame:
-  def __init__(self, initialLeague):
-    self.league = initialLeague
+class StartGame:
+  def __init__(self, initial_league):
+    self.league = initial_league
 
   def record_win(self,command):
     regex = r"record win (\w*) (\w*)"
@@ -14,7 +14,7 @@ class startGame:
     winner = match.group(1)
     loser = match.group(2)
 
-    buildLeague.record_win(self.league, winner, loser)
+    BuildLeague.record_win(self.league, winner, loser)
 
   def save_game (self, command):
     regex = r"save (.*)" 
@@ -41,9 +41,8 @@ class startGame:
       elif (command.startswith('load')):
         self.load_game(command)
       else:
-        return "Unknown command ${command}"
+        return f'Unknown command {command}'
     except InvalidArgumentException as e:
       return e.message
     except:
       raise 'An error has occured'
-       

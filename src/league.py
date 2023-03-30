@@ -1,10 +1,9 @@
-
 import re
 from typing import List
 from src.invalid_argument_exception import InvalidArgumentException
 
 def create_league():
-  return buildLeague([])
+  return BuildLeague([])
 
 class LeagueRow:
   def __init__(self, maxSize, players=None):
@@ -27,8 +26,7 @@ class LeagueRow:
   def inclues(self,player):
     return self.players.includes(player)
 
-class buildLeague:
-  
+class BuildLeague:
   def __init__(self, players: List[str] = None):
     self.rows = [LeagueRow(i+1) for i in range(len(players) // 2)]
     self.added_players = set()
@@ -44,7 +42,7 @@ class buildLeague:
 
   def check_player_is_in_game (self, player):
     if (not self.is_player_in_game(player)):
-      raise InvalidArgumentException("Player '${player}' is not in the game")
+      raise InvalidArgumentException(f"Player {player} is not in the game")
 
   def is_player_in_game (self, player):
     return self.find_player_row_index(player) >= 0
@@ -75,11 +73,10 @@ class buildLeague:
         return [row.get_players() for row in self.rows]
 
   def add_row (self):
-    newRow = LeagueRow(len(self.rows) + 1)
-    self.rows.append(newRow)
+    new_row = LeagueRow(len(self.rows) + 1)
+    self.rows.append(new_row)
 
   def record_win (self, winner, loser):
-    
     self.check_player_is_in_game(winner)
     self.check_player_is_in_game(loser)
 
@@ -96,4 +93,3 @@ class buildLeague:
     if (len(self.rows) > 0):
       return self.rows[0].get_players()[0]
     return None
-  

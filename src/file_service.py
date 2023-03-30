@@ -26,14 +26,14 @@ def load(path, league):
   except: 
     raise InvalidArgumentException(f"Error loading file")
 
-def validate(gameState):
-  bottomRowIndex = len(gameState) - 1
-  for index, row in enumerate(gameState):
-    maxLength = index + 1
-    if index == bottomRowIndex:
-        rowHasCorrectLength = len(row) <= maxLength
+def validate(game_state):
+  bottom_row_index = len(game_state) - 1
+  for index, row in enumerate(game_state):
+    max_length = index + 1
+    if index == bottom_row_index:
+        row_has_correct_length = len(row) <= max_length
     else:
-        rowHasCorrectLength = len(row) == maxLength
+        row_has_correct_length = len(row) == max_length
 
-    if not rowHasCorrectLength:
+    if not row_has_correct_length:
         raise InvalidArgumentException('Invalid game state')
