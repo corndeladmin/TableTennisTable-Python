@@ -1,4 +1,4 @@
-# Exercise Name
+# TableTennisTable
 
 1. Fork this repo
     * Click `Fork` in the top-right of the page - this will create a copy of this repo in **your own GitHub account**
@@ -27,3 +27,26 @@ Your trainer can show you how to do this, if you need any help.
 
 7. Run this command to run your cucumber tests:  
 `poetry run behave`
+
+## Commands
+
+When the app is running the following commands can be run:
+
+* `add player <name>`- adds a player of that name.
+Example: `add player Alice`
+
+* `print`- prints the state of the league
+
+* `record win <winner> <loser> `- records the result of a match.
+Example: `record win Alice Mike`
+
+* `winner`- finds the current winner
+
+* `save <filepath>` - saves the current league to a JSON file.
+Example: `save my_league.json`
+
+* `load <filepath>` - loads a saved league from a JSON file.
+Example: `load my_league.json`
+
+* `quit` - quits the game
+
