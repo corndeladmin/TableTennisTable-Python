@@ -1,13 +1,25 @@
 import re
+import os
 from typing import List
 from src.invalid_argument_exception import InvalidArgumentException
+
+# def get_max_size_with_size_cap(max_size):
+
+#   if "TABLE_TENNIS_LEAGUE_ROW_SIZE_CAP" not in os.environ:
+#     return max_size
+  
+#   size_cap = os.environ["TABLE_TENNIS_LEAGUE_ROW_SIZE_CAP"]
+#   return max_size if max_size <= size_cap else size_cap
+
+# Don't pay attention to this size cap stuff, it will be relevant in a future exercise.
 
 def create_league():
   return BuildLeague([])
 
 class LeagueRow:
   def __init__(self, maxSize, players=None):
-    self.maxSize = maxSize
+    # Again, no need to pay any attention to this commented out size cap stuff, it's for a future exercise
+    self.maxSize = maxSize # get_max_size_with_size_cap(maxSize)
     self.players = players or []
 
   def swap (self, playerToRemove, playerToAdd):
