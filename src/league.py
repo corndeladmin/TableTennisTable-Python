@@ -4,11 +4,15 @@ from typing import List
 from src.invalid_argument_exception import InvalidArgumentException
 
 # def compute_max_size_with_size_cap(max_size):
-
 #   if "TABLE_TENNIS_LEAGUE_ROW_SIZE_CAP" not in os.environ:
 #     return max_size
   
-#   size_cap = os.environ["TABLE_TENNIS_LEAGUE_ROW_SIZE_CAP"]
+#   size_cap_string = os.environ["TABLE_TENNIS_LEAGUE_ROW_SIZE_CAP"]
+
+#   if not size_cap_string.isdigit():
+#     return max_size
+  
+#   size_cap = int(size_cap_string)
 #   return max_size if max_size <= size_cap else size_cap
 
 # Don't pay attention to this size cap code, it will be relevant in a future exercise.
